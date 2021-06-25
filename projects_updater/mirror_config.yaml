@@ -1,11 +1,11 @@
 project_name:
-  clone_origin: clone_origin
-  clone_branch: clone_branch
-  push_origin: push_origin
-  push_branch: push_branch
+  clone_origin: <clone_origin>
+  clone_branch: <clone_branch>
+  push_origin: <push_origin>
+  push_branch: <push_branch>
 
 project_name2:
-  clone_origin: clone_origin2
-  clone_branch: clone_branch2
-  push_origin: push_origin2
-  push_branch: push_branch2
+  clone_origin: <clone_origin2>
+  clone_branch: <clone_branch2>
+  push_origin: <push_origin2>
+  push_branch: <push_branch2>

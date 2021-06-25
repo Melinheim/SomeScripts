@@ -10,13 +10,13 @@ project_name:
   rules:
     - if: $CI_PIPELINE_SOURCE == "schedule"
   script:
-    - git clone clone_origin --branch clone_branch project_name
+    - git clone <clone_origin> --branch <clone_branch> project_name
     - cd project_name
-    - git pull push_origin push_branch --allow-unrelated-histories --no-edit -s ours || true
-    - git remote add -f mirror_origin push_origin
+    - git pull <push_origin> <push_branch> --allow-unrelated-histories --no-edit -s ours || true
+    - git remote add -f mirror_origin <push_origin>
     - git remote update
-    - git_diff=$(git diff clone_branch remotes/mirror_origin/push_branch)
-    - if [[ $git_diff != '' ]]; then echo "There is diff"; git push push_origin clone_branch:push_branch;else echo "There is no diff"; fi
+    - git_diff=$(git diff <clone_branch> remotes/mirror_origin/<push_branch>)
+    - if [[ $git_diff != '' ]]; then echo "There is diff"; git push <push_origin> <clone_branch>:<push_branch>;else echo "There is no diff"; fi
   stage: project_update
   tags:
     - work
@@ -24,13 +24,13 @@ project_name2:
   rules:
     - if: $CI_PIPELINE_SOURCE == "schedule"
   script:
-    - git clone clone_origin2 --branch clone_branch2 project_name2
+    - git clone <clone_origin2> --branch <clone_branch2> project_name2
     - cd project_name2
-    - git pull push_origin2 push_branch2 --allow-unrelated-histories --no-edit -s ours || true
-    - git remote add -f mirror_origin push_origin2
+    - git pull <push_origin2> <push_branch2> --allow-unrelated-histories --no-edit -s ours || true
+    - git remote add -f mirror_origin <push_origin2>
     - git remote update
-    - git_diff=$(git diff clone_branch2 remotes/mirror_origin/push_branch2)
-    - if [[ $git_diff != '' ]]; then echo "There is diff"; git push push_origin2 clone_branch2:push_branch2;else echo "There is no diff"; fi
+    - git_diff=$(git diff <clone_branch2> remotes/mirror_origin/<push_branch2>)
+    - if [[ $git_diff != '' ]]; then echo "There is diff"; git push <push_origin2> <clone_branch2>:<push_branch2>;else echo "There is no diff"; fi
   stage: project_update
   tags:
     - work
