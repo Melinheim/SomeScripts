@@ -1,5 +1,7 @@
 # Projects_Updater
 
+Free repository mirroring system for GitLab.
+
 ## Описание.
 
 Данный проект позволяет осуществлять автоматическое зеркалирование проектов из открытых источников на сервер GitLab.
