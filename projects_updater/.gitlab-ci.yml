@@ -30,6 +30,7 @@ job_generator:
   tags:
     - work
   script:
+    - pip install PyYAML
     - git checkout ${CI_COMMIT_REF_NAME}
     - git pull
     - python3 ./script/job_creator.py
